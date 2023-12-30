@@ -4,7 +4,8 @@
 #include <vector>
 #include <sstream>
 #include <cstdlib>
-
+#include <algorithm>
+#include <random>
 enum CardCategory {
   FOO,
   BAR
@@ -67,32 +68,34 @@ std::vector<Card> createCardObjects(std::vector<std::string> cards){
 }
 
 std::vector<Card> randomShuffle(std::vector<Card> deck){
+  std::random_device rd;
+  std::mt19937 g(rd());
   std::cout << "Random Shuffle" << std::endl;
-  std::vector<Card> randomDeck;
-  std::vector<int> chosenNumbers;
-
-  while(randomDeck.size() != deck.size()){
-    if(randomDeck.size() > deck.size()){
-      std::cout << "Something went wrong with randomization";
-      throw;
-    }
-    int random_number = std::rand() % deck.size()-1;
-    std::cout << "Random number " << random_number << std::endl;
-
-    std::cout << random_number;
-    if(
-      std::find(chosenNumbers.begin(), chosenNumbers.end(), random_number)
-      != chosenNumbers.end()){
-      continue;
-    }
-    randomDeck.push_back(deck[random_number]);
-    chosenNumbers.push_back(random_number);
-  }
-  return randomDeck;
+  // std::vector<Card> randomDeck;
+  // std::vector<int> chosenNumbers;
+  std::shuffle(deck.begin(), deck.end(), g);
+  // while(randomDeck.size() != deck.size()){
+  //   if(randomDeck.size() > deck.size()){
+  //     std::cout << "Something went wrong with randomization";
+  //     throw;
+  //   }
+  //   int random_number = std::rand() % deck.size()-1;
+  //   std::cout << "Random number " << random_number << std::endl;
+  //
+  //   std::cout << random_number;
+  //   if(
+  //     std::find(chosenNumbers.begin(), chosenNumbers.end(), random_number)
+  //     != chosenNumbers.end() && random_number > 0){
+  //     continue;
+  //   }
+  //   randomDeck.push_back(deck[random_number]);
+  //   chosenNumbers.push_back(random_number);
+  // }
+  return deck;
 }
 
 int main(int argc, char const *argv[]) {
-  std::cout << "Starting Simulation";
+  std::cout << "Starting Simulation" << std::endl;
   std::vector<std::string> cards = readCSV("./TestCSV.csv");
   std::vector<Card> deck = createCardObjects(cards);
   std::vector<Card> randomizedDeck = randomShuffle(deck);
