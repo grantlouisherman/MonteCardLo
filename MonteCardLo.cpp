@@ -67,7 +67,7 @@ std::vector<Card> createCardObjects(std::vector<std::string> cards){
 }
 
 std::vector<Card> randomShuffle(std::vector<Card> deck){
-  std::cout << "Random Shuffle";
+  std::cout << "Random Shuffle" << std::endl;
   std::vector<Card> randomDeck;
   std::vector<int> chosenNumbers;
 
@@ -77,13 +77,15 @@ std::vector<Card> randomShuffle(std::vector<Card> deck){
       throw;
     }
     int random_number = std::rand() % deck.size()-1;
+    std::cout << "Random number " << random_number << std::endl;
+
     std::cout << random_number;
     if(
       std::find(chosenNumbers.begin(), chosenNumbers.end(), random_number)
       != chosenNumbers.end()){
       continue;
     }
-    randomDeck[random_number] = deck[random_number];
+    randomDeck.push_back(deck[random_number]);
     chosenNumbers.push_back(random_number);
   }
   return randomDeck;
@@ -92,9 +94,10 @@ std::vector<Card> randomShuffle(std::vector<Card> deck){
 int main(int argc, char const *argv[]) {
   std::cout << "Starting Simulation";
   std::vector<std::string> cards = readCSV("./TestCSV.csv");
-  std::vector<Card> deck = randomShuffle(createCardObjects(cards));
+  std::vector<Card> deck = createCardObjects(cards);
+  std::vector<Card> randomizedDeck = randomShuffle(deck);
   // sanity check on deck creation
-  for(auto i: deck){
+  for(auto i: randomizedDeck){
     std::cout << i.card_id << std::endl;
   }
   std::cout << "Simulation Ended ;)";
