@@ -6,21 +6,17 @@
 #include <cstdlib>
 #include <algorithm>
 #include <random>
-enum CardCategory {
-  FOO,
-  BAR
-};
 
 class Card {
 public:
   std::string card_id;
-  CardCategory card_categroy;
+  std::string card_categroy;
   std::string card_value;
   std::string card_name;
 
   Card(std::string id, std::string categroy, std::string value, std::string name) {
     this->card_id = id;
-    this->card_categroy = CardCategory::FOO;
+    this->card_categroy = categroy;
     this->card_value = value;
     this->card_name = name;
   }
@@ -34,9 +30,10 @@ std::vector<std::string> readCSV(std::string file_name) {
     while(std::getline(CSV, current_line)){
       std::string card;
       std::stringstream string_stream(current_line);
-      string_stream >> card;
-      std::cout << "/* message */" << card << '\n';
-      cards.push_back(card);
+      std::string token;
+      while(std::getline(string_stream, token)) {
+          cards.push_back(token);
+      }
     }
   }
   CSV.close();
@@ -44,6 +41,7 @@ std::vector<std::string> readCSV(std::string file_name) {
 }
 
 Card createCardObject(std::string card) {
+//std::cout << "Creating Card ...." << std::endl;
  std::vector<std::string> constructor_vars;
  int pos = 0;
  while(pos<card.size()){
@@ -60,6 +58,7 @@ Card createCardObject(std::string card) {
 }
 
 std::vector<Card> createCardObjects(std::vector<std::string> cards){
+  std::cout << "Creating Card Objects ...." << std::endl;
   std::vector<Card> deck;
   for(std::string card_string: cards){
     deck.push_back(createCardObject(card_string));
@@ -81,7 +80,7 @@ void printCardStrings(std::vector<Card> randomizedDeck){
   }
 }
 
-void monteCardLoSimulation(std::vector<Card> deck){
+void monteCarLoSimulation(std::vector<Card> deck){
   for(int i=0;i<=3;i++){
     std::vector<Card> randomizedDeck = randomShuffle(deck);
     printCardStrings(randomizedDeck);
@@ -90,9 +89,9 @@ void monteCardLoSimulation(std::vector<Card> deck){
 
 int main(int argc, char const *argv[]) {
   std::cout << "Starting Simulation" << std::endl;
-  std::vector<std::string> cards = readCSV("./TestCSV.csv");
+  std::vector<std::string> cards = readCSV("./FTP.csv");
   std::vector<Card> deck = createCardObjects(cards);
-  monteCardLoSimulation(deck);
+  monteCarLoSimulation(deck);
   std::cout << "Simulation Ended ;)";
   return 0;
 }
