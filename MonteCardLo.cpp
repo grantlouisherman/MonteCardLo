@@ -3,6 +3,7 @@
 #include <iostream>
 #include <vector>
 #include <sstream>
+#include <cstdlib>
 
 enum CardCategory {
   FOO,
@@ -57,7 +58,45 @@ Card createCardObject(std::string card) {
  return cardObject;
 }
 
+std::vector<Card> createCardObjects(std::vector<std::string> cards){
+  std::vector<Card> deck;
+  for(std::string card_string: cards){
+    deck.push_back(createCardObject(card_string));
+  }
+  return deck;
+}
+
+std::vector<Card> randomShuffle(std::vector<Card> deck){
+  std::cout << "Random Shuffle";
+  std::vector<Card> randomDeck;
+  std::vector<int> chosenNumbers;
+
+  while(randomDeck.size() != deck.size()){
+    if(randomDeck.size() > deck.size()){
+      std::cout << "Something went wrong with randomization";
+      throw;
+    }
+    int random_number = std::rand() % deck.size()-1;
+    std::cout << random_number;
+    if(
+      std::find(chosenNumbers.begin(), chosenNumbers.end(), random_number)
+      != chosenNumbers.end()){
+      continue;
+    }
+    randomDeck[random_number] = deck[random_number];
+    chosenNumbers.push_back(random_number);
+  }
+  return randomDeck;
+}
+
 int main(int argc, char const *argv[]) {
-  std::vector<std::string> cards = readCSV("/Users/grantherman/Desktop/TestCSV.csv");
+  std::cout << "Starting Simulation";
+  std::vector<std::string> cards = readCSV("./TestCSV.csv");
+  std::vector<Card> deck = randomShuffle(createCardObjects(cards));
+  // sanity check on deck creation
+  for(auto i: deck){
+    std::cout << i.card_id << std::endl;
+  }
+  std::cout << "Simulation Ended ;)";
   return 0;
 }
