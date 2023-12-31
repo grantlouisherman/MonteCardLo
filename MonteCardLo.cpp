@@ -80,10 +80,25 @@ void printCardStrings(std::vector<Card> randomizedDeck){
   }
 }
 
-void monteCarLoSimulation(std::vector<Card> deck){
-  for(int i=0;i<=3;i++){
+void monteCarloSimulation(std::vector<Card> deck, int N){
+  std::vector<std::vector<Card>> player1;
+  std::vector<std::vector<Card>> player2;
+
+  for(int i=0;i<=N;i++){
     std::vector<Card> randomizedDeck = randomShuffle(deck);
-    printCardStrings(randomizedDeck);
+    // printCardStrings(randomizedDeck);
+    std::vector<Card> player_1_hand;
+    std::vector<Card> player_2_hand;
+    for(int i=0;i<14;i++){
+      // player1 gets cards on even and 0
+      if(i % 2 == 0 || i == 0){
+        player_1_hand.push_back(randomizedDeck[i]);
+      } else {
+        player_2_hand.push_back(randomizedDeck[i]);
+      }
+    }
+    player1.push_back(player_1_hand);
+    player2.push_back(player_2_hand);
   }
 }
 
@@ -91,7 +106,7 @@ int main(int argc, char const *argv[]) {
   std::cout << "Starting Simulation" << std::endl;
   std::vector<std::string> cards = readCSV("./FTP.csv");
   std::vector<Card> deck = createCardObjects(cards);
-  monteCarLoSimulation(deck);
+  monteCarloSimulation(deck);
   std::cout << "Simulation Ended ;)";
   return 0;
 }
