@@ -6,6 +6,7 @@
 #include <cstdlib>
 #include <algorithm>
 #include <random>
+#include<tuple>
 
 class Card {
 public:
@@ -19,6 +20,16 @@ public:
     this->card_categroy = categroy;
     this->card_value = value;
     this->card_name = name;
+  }
+
+  void print(){
+    std::cout << "Card ID: " << card_id
+    << std::endl <<
+    "Card Categroy: " << card_categroy
+    << std::endl
+    << "Card Value: " << card_value
+    << std::endl <<
+    "Card Name: " << card_name;
   }
 };
 
@@ -69,10 +80,11 @@ std::vector<Card> createCardObjects(std::vector<std::string> cards){
 std::vector<Card> randomShuffle(std::vector<Card> deck){
   std::random_device rd;
   std::mt19937 g(rd());
-  std::cout << "Random Shuffle" << std::endl;
   std::shuffle(deck.begin(), deck.end(), g);
   return deck;
 }
+
+
 void printCardStrings(std::vector<Card> randomizedDeck){
   // sanity check on deck creation
   for(auto i: randomizedDeck){
@@ -80,7 +92,11 @@ void printCardStrings(std::vector<Card> randomizedDeck){
   }
 }
 
-void monteCarloSimulation(std::vector<Card> deck, int N){
+std::tuple<
+std::vector<std::vector<Card>>,
+std::vector<std::vector<Card>>>
+monteCarloSimulation(std::vector<Card> deck, int N){
+  std::cout << "Monte Carlo Started" << std::endl;
   std::vector<std::vector<Card>> player1;
   std::vector<std::vector<Card>> player2;
 
@@ -100,13 +116,16 @@ void monteCarloSimulation(std::vector<Card> deck, int N){
     player1.push_back(player_1_hand);
     player2.push_back(player_2_hand);
   }
+  return {player1, player2};
 }
 
 int main(int argc, char const *argv[]) {
   std::cout << "Starting Simulation" << std::endl;
   std::vector<std::string> cards = readCSV("./FTP.csv");
   std::vector<Card> deck = createCardObjects(cards);
-  monteCarloSimulation(deck);
+  auto simulations = monteCarloSimulation(deck, 100000);
+  auto player_1 = std::get<0>(simulations);
+  auto player_2 = std::get<1>(simulations);
   std::cout << "Simulation Ended ;)";
   return 0;
 }
