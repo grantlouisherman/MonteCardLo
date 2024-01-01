@@ -14,12 +14,14 @@ public:
   std::string card_categroy;
   std::string card_value;
   std::string card_name;
+  std::string card_side;
 
-  Card(std::string id, std::string categroy, std::string value, std::string name) {
+  Card(std::string id, std::string categroy, std::string value, std::string name, std::string side) {
     this->card_id = id;
     this->card_categroy = categroy;
     this->card_value = value;
     this->card_name = name;
+    this->card_side = side;
   }
 
   void print(){
@@ -64,7 +66,8 @@ Card createCardObject(std::string card) {
    constructor_vars[0],
    constructor_vars[1],
    constructor_vars[2],
-   constructor_vars[3]);
+   constructor_vars[3],
+   constructor_vars[4]);
  return cardObject;
 }
 
@@ -117,6 +120,10 @@ monteCarloSimulation(std::vector<Card> deck, int N){
     player2.push_back(player_2_hand);
   }
   return {player1, player2};
+}
+
+void analyze(std::vector<std::vector<Card>> player_deck){
+
 }
 
 int main(int argc, char const *argv[]) {
