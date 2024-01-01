@@ -7,6 +7,7 @@
 #include <algorithm>
 #include <random>
 #include<tuple>
+#include <unordered_map>
 
 class Card {
 public:
@@ -122,8 +123,12 @@ monteCarloSimulation(std::vector<Card> deck, int N){
   return {player1, player2};
 }
 
+std::unordered_map<std::string, int> createFreqTable(){
+  std::unordered_map<std::string, int> map;
+  return map;
+}
 void analyze(std::vector<std::vector<Card>> player_deck){
-
+  //std::unordered_map<std::string, int> categroy
 }
 
 int main(int argc, char const *argv[]) {
