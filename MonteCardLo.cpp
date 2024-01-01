@@ -36,6 +36,7 @@ public:
   }
 };
 
+
 std::vector<std::string> readCSV(std::string file_name) {
   std::ifstream CSV(file_name);
   std::vector<std::string> cards;
@@ -123,14 +124,35 @@ monteCarloSimulation(std::vector<Card> deck, int N){
   return {player1, player2};
 }
 
-std::unordered_map<std::string, int> createFreqTable(){
-  std::unordered_map<std::string, int> map;
-  return map;
+std::unordered_map<std::string, int> mapInsert(std::unordered_map<std::string, int> map, std::string key) {
+    if(map.find(key) == map.end()){
+      map[key] = 0;
+    }
+    map[key] = map[key]+1;
+    return map;
 }
-void analyze(std::vector<std::vector<Card>> player_deck){
-  //std::unordered_map<std::string, int> categroy
+std::vector<std::unordered_map<std::string, int>> analyzeHand(std::vector<std::vector<Card>> player_hands){
+  std::unordered_map<std::string, int> categories;
+  std::unordered_map<std::string, int> sides;
+  std::unordered_map<std::string, int> names;
+  std::unordered_map<std::string, int> values;
+  for(auto player_hand: player_hands){
+    for(auto card: player_hand){
+      auto categroy = card.card_categroy;
+      auto value  = card.card_value;
+      auto name = card.card_name;
+      auto side = card.card_side;
+      mapInsert(categories, categroy);
+      mapInsert(values, value);
+      mapInsert(names, name);
+      mapInsert(sides, side);
+    }
+  }
+  std::vector maps = {categories, sides, names, values};
+  return maps;
 }
 
+//void printMapKeysValues()
 int main(int argc, char const *argv[]) {
   std::cout << "Starting Simulation" << std::endl;
   std::vector<std::string> cards = readCSV("./FTP.csv");
@@ -138,6 +160,7 @@ int main(int argc, char const *argv[]) {
   auto simulations = monteCarloSimulation(deck, 100000);
   auto player_1 = std::get<0>(simulations);
   auto player_2 = std::get<1>(simulations);
+  auto player_1_hand_stats = analyzeHand(player_1);
   std::cout << "Simulation Ended ;)";
   return 0;
 }
