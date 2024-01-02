@@ -55,6 +55,32 @@ std::vector<std::string> readCSV(std::string file_name) {
   return cards;
 }
 
+void writeCSV(std::vector<std::unordered_map<std::string, int>> maps){
+  std::ofstream simulation_ouput("simulation.csv");
+  for(int i=0;i<maps.size();i++){
+    switch(i){
+      case 0;
+        simulation_ouput << "Categories....";
+        break;
+      case 1:
+        simulation_ouput << "Sides....";
+        break;
+      case 2:
+        simulation_ouput << "Names....";
+        break;
+      case 3:
+        simulation_ouput << "Values....";
+        break;
+      default:
+        break;
+    }
+    // for(const auto &kv : maps[i]) {
+    //   simulation_ouput <<
+    //   keys.push_back(kv.first);
+    //   vals.push_back(kv.second);
+    // }
+  }
+}
 Card createCardObject(std::string card) {
 //std::cout << "Creating Card ...." << std::endl;
  std::vector<std::string> constructor_vars;
@@ -131,6 +157,8 @@ std::unordered_map<std::string, int> mapInsert(std::unordered_map<std::string, i
     map[key] = map[key]+1;
     return map;
 }
+
+// {categroy, sides, names, values}
 std::vector<std::unordered_map<std::string, int>> analyzeHand(std::vector<std::vector<Card>> player_hands){
   std::unordered_map<std::string, int> categories;
   std::unordered_map<std::string, int> sides;
