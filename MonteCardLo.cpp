@@ -139,6 +139,7 @@ monteCarloSimulation(std::vector<Card> deck, int N){
   std::vector<std::vector<Card>> player2;
 
   for(int i=0;i<=N;i++){
+    //std::cout << "Current Interation: " << i << std::endl;
     std::vector<Card> randomizedDeck = randomShuffle(deck);
     // printCardStrings(randomizedDeck);
     std::vector<Card> player_1_hand;
@@ -154,6 +155,7 @@ monteCarloSimulation(std::vector<Card> deck, int N){
     player1.push_back(player_1_hand);
     player2.push_back(player_2_hand);
   }
+  std::cout << "Monte Carlo Ended" << std::endl;
   return {player1, player2};
 }
 
@@ -177,10 +179,10 @@ std::vector<std::unordered_map<std::string, int>> analyzeHand(std::vector<std::v
       auto value  = card.card_value;
       auto name = card.card_name;
       auto side = card.card_side;
-      categories=mapInsert(categories, categroy);
-      values=mapInsert(values, value);
-      names=mapInsert(names, name);
-      sides=mapInsert(sides, side);
+      categories.insert({categroy, 0});
+      values.insert({value, 0});
+      names.insert({name, 0});
+      sides.insert({side, 0});
     }
   }
   std::vector maps = {categories, sides, names, values};
