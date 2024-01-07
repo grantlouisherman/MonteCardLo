@@ -9,6 +9,7 @@
 #include<tuple>
 #include <unordered_map>
 #include <cassert>
+#include <map>
 #include <format>
 
 class Card {
@@ -57,7 +58,7 @@ std::vector<std::string> readCSV(std::string file_name) {
   return cards;
 }
 
-void writeCSV(std::vector<std::unordered_map<std::string, int>> maps){
+void writeCSV(std::vector<std::map<std::string, int>> maps){
   std::cout << "Writing CSV...";
   std::ofstream simulation_ouput("simulation.csv");
   std::cout << "Map Size: " << maps.size() << std::endl;
@@ -78,12 +79,9 @@ void writeCSV(std::vector<std::unordered_map<std::string, int>> maps){
     //   // default:
     //   //   // break;
     // }
-    std::cout << "Hand Size: " << maps[i].size() << std::endl;
-    for(const auto &kv : maps[i]) {
-      std::string line;
-      std::cout << kv.first << kv.second << std::endl;
-      // simulation_ouput << kv.first;
-      // simulation_ouput << kv.second;
+    for (const auto& [key, value] : maps[i]) {
+      simulation_ouput << key;
+      simulation_ouput << value;
     }
   }
   simulation_ouput.close();
@@ -159,30 +157,32 @@ monteCarloSimulation(std::vector<Card> deck, int N){
   return {player1, player2};
 }
 
-std::unordered_map<std::string, int> mapInsert(std::unordered_map<std::string, int> map, std::string key) {
-    map.insert({key, 0});
-    // auto current_value = map.find(key);
-    // map.insert({key, current_value->second+1});
-    return map;
+std::map<std::string, int> mapInsert(std::map<std::string, int> map, std::string key){
+  if(map.find(key) == map.end()){
+    map[key] = 1;
+  } else {
+    auto value = map[key];
+    map[key]=value+1;
+  }
+  return map;
 }
-
 // {categroy, sides, names, values}
-std::vector<std::unordered_map<std::string, int>> analyzeHand(std::vector<std::vector<Card>> player_hands){
+std::vector<std::map<std::string, int>> analyzeHand(std::vector<std::vector<Card>> player_hands){
   std::cout << "Analyzing";
-  std::unordered_map<std::string, int> categories;
-  std::unordered_map<std::string, int> sides;
-  std::unordered_map<std::string, int> names;
-  std::unordered_map<std::string, int> values;
+  std::map<std::string, int> categories;
+  std::map<std::string, int> sides;
+  std::map<std::string, int> names;
+  std::map<std::string, int> values;
   for(auto player_hand: player_hands){
     for(auto card: player_hand){
-      auto categroy = card.card_categroy;
+      auto category = card.card_categroy;
       auto value  = card.card_value;
       auto name = card.card_name;
       auto side = card.card_side;
-      categories.insert({categroy, 0});
-      values.insert({value, 0});
-      names.insert({name, 0});
-      sides.insert({side, 0});
+      categories = mapInsert(std::move(categories), category);
+      sides = mapInsert(std::move(sides), side);
+      names = mapInsert(std::move(names), name);
+      values = mapInsert(std::move(values), value);
     }
   }
   std::vector maps = {categories, sides, names, values};
