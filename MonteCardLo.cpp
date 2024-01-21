@@ -63,29 +63,15 @@ void writeCSV(std::vector<std::map<std::string, int>> maps){
   std::ofstream simulation_ouput("simulation.csv");
   std::cout << "Map Size: " << maps.size() << std::endl;
   for(int i=0;i<maps.size();i++){
-    // switch(i){
-    //   case 0:
-    //     simulation_ouput << "Categories";
-    //     // break;
-    //   case 1:
-    //     simulation_ouput << "Sides";
-    //     // break;
-    //   case 2:
-    //     simulation_ouput << "Names";
-    //     // break;
-    //   case 3:
-    //     simulation_ouput << "Values";
-    //     // break;
-    //   // default:
-    //   //   // break;
-    // }
     for (const auto& [key, value] : maps[i]) {
-      simulation_ouput << key;
-      simulation_ouput << value;
+      //std::cout << "Key: " << key << " Value: " << value << std::endl;
+      std::string row_value = key+" "+std::to_string(value)+"\n";
+      simulation_ouput << row_value;
     }
   }
   simulation_ouput.close();
 }
+
 Card createCardObject(std::string card) {
 //std::cout << "Creating Card ...." << std::endl;
  std::vector<std::string> constructor_vars;
@@ -179,6 +165,8 @@ std::vector<std::map<std::string, int>> analyzeHand(std::vector<std::vector<Card
       auto value  = card.card_value;
       auto name = card.card_name;
       auto side = card.card_side;
+      std::cout << "Category: " << category << std::endl << "Value: " << value << std::endl
+      << "Name: " << name << std::endl << "Side: " << side << std::endl;
       categories = mapInsert(std::move(categories), category);
       sides = mapInsert(std::move(sides), side);
       names = mapInsert(std::move(names), name);
