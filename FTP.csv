@@ -1,130 +1,130 @@
-1,Attrition,1,Empty Haversacks,U
-2,Strategic Will,2,Copperheads,C
-3,Military,1,Forward to Richmond,B
-4,Leader Casualty,1,Costly Mistake,B
+1,Attrition,1,Empty_Haversacks,U
+2,Strategic_Will,2,Copperheads,C
+3,Military,1,Forward_to_Richmond,B
+4,Leader_Casualty,1,Costly_Mistake,B
 5,Attrition,1,Dysentery,B
-6,Leader Casualty,1,Ambush,B
-7,Reaction,1,Mud March,B
-8,Intercept,1,3 Cigars,B
-9,Recruit,3,Clara Burton,U
-10,Recruit,3,Dorothea Dix,U
-11,Political Control,2,Nathanial Lyon,U
-12,Strategic Will,3,Cabinet Intrigue,C
-13,Political Control,2,Missouri Guerrilla Raids,C
-14,Military,3,Red River Campaign,U
-15,Political Control,1,Mosbys Raiders,C
-16,Political Control,2,Griersons Raid,U
-17,Recruit,3,CSA Purchasing Agents,C
-18,Strategic Will,2,Confederate Inflation,U
+6,Leader_Casualty,1,Ambush,B
+7,Reaction,1,Mud_March,B
+8,Intercept,1,3_Cigars,B
+9,Recruit,3,Clara_Burton,U
+10,Recruit,3,Dorothea_Dix,U
+11,Political_Control,2,Nathanial_Lyon,U
+12,Strategic_Will,3,Cabinet_Intrigue,C
+13,Political_Control,2,Missouri_Guerrilla_Raids,C
+14,Military,3,Red_River_Campaign,U
+15,Political_Control,1,Mosbys_Raiders,C
+16,Political_Control,2,Griersons_Raid,U
+17,Recruit,3,CSA_Purchasing_Agents,C
+18,Strategic_Will,2,Confederate_Inflation,U
 19,Military,1,Belmont,B
-20,Attrition,3,Union Arms Production Delayed,C
-21,Recruit,3,Confederate Overseas Agent,C
-22,Recruit,3,Josiah Gorgas Chief of Ordnance,C
-23,Recruit,2,Bermuda Blockade Surge,C
-24,Forts,3,Pre-War Treachery,C
-25,Discard,1,Confederate Railroad Degradation,U
-26,Strategic Will,3,Cotton is King,B
-27,Discard,3,Choctaw Indians,C
-28,Recruit,1,Franz Sigel,U
-29,Political Control,2,Crittenden Compromise,U
-30,Recruit,3,Glory Hallelujah,U
-31,Attrition,2,Contraband of War,U
-32,Strategic Will,3,Dixie Land,C
-33,Recruit,1,Orphan Brigade,C
-34,Military,1,Elite Units,B
-35,Military,1,Elite Units,B
-36,Military,1,Elite Units,B
-37,Recruit,2,Confederate Scientist,C
-38,Recruit,2,Increased Gunpowder Production,C
-39,Attrition,2,Draft Riots in New York,C
-40,Recruit,3,Emergency Call for Volunteers,U
-41,Recruit,2,Tennessee Confederate,C
-42,Political Control,2,Kentucky Anarchy,B
-43,Recruit,1,KANSAS Admitted to Union,U
-44,Political Control,2,Western Virginia,U
-45,Attrition,3,Food Shortage,U
-46,Political Control,1,Pro Union Secessionist in Tennessee,U
-47,Strategic Will,3,CSA Recognizes KY MO MD and DE,C
-48,Strategic Will,3,Brazil Recognizes the Confederacy,C
-49,Naval,3,CSS Alabama,C
-50,Naval,1,CSS Sumter,C
-51,Naval,1,Confederate Torpedoes,C
-52,Strategic Will,3,Trent Affair,C
-53,Naval,1,CSS Arkansas,C
-54,Naval,1,CSS Virginia,C
-55,Naval,1,CSS Tennessee,C
-56,Naval,1,CSS Hunley,C
-57,Naval,2,Admiral Foote,U
-58,Naval,2,Admiral Porter,U
+20,Attrition,3,Union_Arms_Production_Delayed,C
+21,Recruit,3,Confederate_Overseas_Agent,C
+22,Recruit,3,Josiah_Gorgas_Chief_of_Ordnance,C
+23,Recruit,2,Bermuda_Blockade_Surge,C
+24,Forts,3,Pre-War_Treachery,C
+25,Discard,1,Confederate_Railroad_Degradation,U
+26,Strategic_Will,3,Cotton_is_King,B
+27,Discard,3,Choctaw_Indians,C
+28,Recruit,1,Franz_Sigel,U
+29,Political_Control,2,Crittenden_Compromise,U
+30,Recruit,3,Glory_Hallelujah,U
+31,Attrition,2,Contraband_of_War,U
+32,Strategic_Will,3,Dixie_Land,C
+33,Recruit,1,Orphan_Brigade,C
+34,Military,1,Elite_Units,B
+35,Military,1,Elite_Units,B
+36,Military,1,Elite_Units,B
+37,Recruit,2,Confederate_Scientist,C
+38,Recruit,2,Increased_Gunpowder_Production,C
+39,Attrition,2,Draft_Riots_in_New_York,C
+40,Recruit,3,Emergency_Call_for_Volunteers,U
+41,Recruit,2,Tennessee_Confederate,C
+42,Political_Control,2,Kentucky_Anarchy,B
+43,Recruit,1,KANSAS_Admitted_to_Union,U
+44,Political_Control,2,Western_Virginia,U
+45,Attrition,3,Food_Shortage,U
+46,Political_Control,1,Pro_Union_Secessionist_in_Tennessee,U
+47,Strategic_Will,3,CSA_Recognizes_KY_MO_MD_and_DE,C
+48,Strategic_Will,3,Brazil_Recognizes_the_Confederacy,C
+49,Naval,3,CSS_Alabama,C
+50,Naval,1,CSS_Sumter,C
+51,Naval,1,Confederate_Torpedoes,C
+52,Strategic_Will,3,Trent_Affair,C
+53,Naval,1,CSS_Arkansas,C
+54,Naval,1,CSS_Virginia,C
+55,Naval,1,CSS_Tennessee,C
+56,Naval,1,CSS_Hunley,C
+57,Naval,2,Admiral_Foote,U
+58,Naval,2,Admiral_Porter,U
 59,Naval,2,Farragut,U
-60,Naval,2,USS Monitor,U
-61,Naval,3,Ship Island Key West,U
-62,Strategic Will,2,Salmon Chase Financial Crises,C
-63,Naval,2,Beaufort Port Royal Captured,U
-64,Naval,1,USS Kearsage Sinks CSS Alabama,U
-65,Attrition,1,Union 90-Day Enlistments Expire,C
-66,Military,1,Wilsons Creek,B
-67,Naval,2,J.B. EADS Riverine Ironclads,U
-68,Naval,2,Lincoln Declares Southern Blockade,U
-69,Naval,3,Gideon Welles The Naval Program,U
-70,Naval,2,Ironclad Building Program,U
-71,Naval,3,The Anaconda Plan,U
-72,Naval,2,John Ericssons Monitor Fleet,U
-73,Attrition,1,Balls Bluff,C
-74,General,2,Political Crises,U
-75,Concentration,2,Western Concentration Block,C
-76,General,2,Great Sioux Uprising,U
-77,Strategic Will,2,Stop the War!,C
-78,General,3,Personal Advisor,B
-79,Recruit,1,Indian Allies,C
-80,Recruit,1,Southern Religious Revival,C
-81,Emancipation,3,Emancipation Proclamation,B
-82,Foreign Intervention,3,Foreign Intervention,B
-83,Campaign,3,Major Campaign,B
-84,Campaign,3,Major Campaign,B
-85,Campaign,3,Minor Campaign,B
-86,Campaign,3,Minor Campaign,B
-87,Campaign,3,Minor Campaign,B
-88,Campaign,3,Minor Campaign,B
-89,Reaction,1,Quaker Guns,C
-90,Strategic Will,3,Habeas Corpus,C
-91,Strategic Will,2,Jefferson Davis Issues Letters of Marque,C
-92,Political Control,2,Baltimore Revolts,C
-93,Naval,2,Strategy Board,U
-94,Naval,2,Strategy Board,U
-95,Naval,2,Strategy Board,U
-96,Naval,2,Strategy Board,U
-97,Strategic Will,1,Davis Tours the South,C
-98,Naval,2,Cape Hatteras Operations,U
-99,Campaign,3,Minor Campaign,B
+60,Naval,2,USS_Monitor,U
+61,Naval,3,Ship_Island_Key_West,U
+62,Strategic_Will,2,Salmon_Chase_Financial_Crises,C
+63,Naval,2,Beaufort_Port_Royal_Captured,U
+64,Naval,1,USS_Kearsage_Sinks_CSS_Alabama,U
+65,Attrition,1,Union_90-Day_Enlistments_Expire,C
+66,Military,1,Wilsons_Creek,B
+67,Naval,2,J.B._EADS_Riverine_Ironclads,U
+68,Naval,2,Lincoln_Declares_Southern_Blockade,U
+69,Naval,3,Gideon_Welles_The_Naval_Program,U
+70,Naval,2,Ironclad_Building_Program,U
+71,Naval,3,The_Anaconda_Plan,U
+72,Naval,2,John_Ericssons_Monitor_Fleet,U
+73,Attrition,1,Balls_Bluff,C
+74,General,2,Political_Crises,U
+75,Concentration,2,Western_Concentration_Block,C
+76,General,2,Great_Sioux_Uprising,U
+77,Strategic_Will,2,Stop_the_War!,C
+78,General,3,Personal_Advisor,B
+79,Recruit,1,Indian_Allies,C
+80,Recruit,1,Southern_Religious_Revival,C
+81,Emancipation,3,Emancipation_Proclamation,B
+82,Foreign_Intervention,3,Foreign_Intervention,B
+83,Campaign,3,Major_Campaign,B
+84,Campaign,3,Major_Campaign,B
+85,Campaign,3,Minor_Campaign,B
+86,Campaign,3,Minor_Campaign,B
+87,Campaign,3,Minor_Campaign,B
+88,Campaign,3,Minor_Campaign,B
+89,Reaction,1,Quaker_Guns,C
+90,Strategic_Will,3,Habeas_Corpus,C
+91,Strategic_Will,2,Jefferson_Davis_Issues_Letters_of_Marque,C
+92,Political_Control,2,Baltimore_Revolts,C
+93,Naval,2,Strategy_Board,U
+94,Naval,2,Strategy_Board,U
+95,Naval,2,Strategy_Board,U
+96,Naval,2,Strategy_Board,U
+97,Strategic_Will,1,Davis_Tours_the_South,C
+98,Naval,2,Cape_Hatteras_Operations,U
+99,Campaign,3,Minor_Campaign,B
 100,Concentration,3,Shiloh,C
 101,Concentration,3,Chickamauga,C
-102,Intercept,3,First Manassas,C
-103,Intercept,3,Seven Days Chattanooga,B
-104,Military,1,Big Bethel,B
-105,Military,1,Detached Cavalry,B
-106,Recruit,3,British Clydeside Shipyards,C
-107,Reaction,1,Guerrilla Raids Delay Supply,C
-108,Strategic Will,2,Richmond Bread Riots,U
-109,Forts,2,Fortified Lines,C
-110,Strategic Will,3,The Gettysburg Address,U
-111,Military,2,Wilsons Raid,U
-112,Naval,2,Severe Storms at Sea,C
-113,Forts,2,Washington Defences,U
-114,Recruit,3,Frederick Douglas,U
+102,Intercept,3,First_Manassas,C
+103,Intercept,3,Seven_Days_Chattanooga,B
+104,Military,1,Big_Bethel,B
+105,Military,1,Detached_Cavalry,B
+106,Recruit,3,British_Clydeside_Shipyards,C
+107,Reaction,1,Guerrilla_Raids_Delay_Supply,C
+108,Strategic_Will,2,Richmond_Bread_Riots,U
+109,Forts,2,Fortified_Lines,C
+110,Strategic_Will,3,The_Gettysburg_Address,U
+111,Military,2,Wilsons_Raid,U
+112,Naval,2,Severe_Storms_at_Sea,C
+113,Forts,2,Washington_Defences,U
+114,Recruit,3,Frederick_Douglas,U
 115,Naval,2,Galveston,C
-116,Naval,2,Confederate River Flotilla,C
-117,Recruit,3,Clandestine Blockade Runner Port,C
-118,Recruit,3,Mexican Supply Line,C
-119,Discard,2,War in the West,B
-120,Political Control,1,Horace Greeley Editorial,B
-121,Campaign,3,Minor Campaign,B
-122,Military,3,Crises in the West,U
-123,Political Control,1,Quantrills Raiders,B
-124,Attrition,2,Confederate Desertions,U
-125,Discard,1,Confederate Locomotive Shortage,U
-126,Political Control,1,Valley Devastation,U
-127,Naval,2,Brooklyn Navy Yard Conversions,U
-128,Naval,3,Union Naval Supply Shortage,C
-129,Naval,2,USS Cairo Hits Mine and Sinks,C
-130,Military,3,Union Siege Guns,U
+116,Naval,2,Confederate_River_Flotilla,C
+117,Recruit,3,Clandestine_Blockade_Runner_Port,C
+118,Recruit,3,Mexican_Supply_Line,C
+119,Discard,2,War_in_the_West,B
+120,Political_Control,1,Horace_Greeley_Editorial,B
+121,Campaign,3,Minor_Campaign,B
+122,Military,3,Crises_in_the_West,U
+123,Political_Control,1,Quantrills_Raiders,B
+124,Attrition,2,Confederate_Desertions,U
+125,Discard,1,Confederate_Locomotive_Shortage,U
+126,Political_Control,1,Valley_Devastation,U
+127,Naval,2,Brooklyn_Navy_Yard_Conversions,U
+128,Naval,3,Union_Naval_Supply_Shortage,C
+129,Naval,2,USS_Cairo_Hits_Mine_and_Sinks,C
+130,Military,3,Union_Siege_Guns,U
